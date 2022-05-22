@@ -1,0 +1,11 @@
+type Balance {
+  name: String!
+  address: String!
+  balance: String!
+  transactions: Int!
+}
+
+type Query {
+  allBalances: [Balance!]!
+  balanceByAddress(address: String): [Balance!]! @resolver(paginated: true)
+}
