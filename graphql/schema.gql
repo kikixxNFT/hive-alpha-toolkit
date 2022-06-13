@@ -5,7 +5,24 @@ type Balance {
   transactions: Int!
 }
 
+input Premint {
+  url: String!
+  name: String!
+  official_link: String
+  raffle_time: String
+  registration_closes: String
+  mint_date: String
+  mint_price: String
+  twitter_link: String
+  discord_link: String
+}
+
 type Query {
   allBalances: [Balance!]!
+  allPremints: [Premint!]!
   balanceByAddress(address: String): [Balance!]! @resolver(paginated: true)
+}
+
+type Mutation {
+  createPremint(data: Premint): Premint
 }

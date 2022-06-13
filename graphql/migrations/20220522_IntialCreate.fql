@@ -13,6 +13,20 @@ Let(
 )
 
 Let(
+    {
+        index_params: {
+            name: "allPremints",
+            source: Collection("Premint")
+        }
+    },
+    If(
+        Exists(Index("allPremints")),
+        Update(Index("allPremints"), Var("index_params")),
+        CreateIndex(Var("index_params"))
+    )
+)
+
+Let(
   {
     function_params: {
       name: "balanceByAddress",
