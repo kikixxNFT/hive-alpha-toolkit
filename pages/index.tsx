@@ -15,7 +15,6 @@ import {
 import { ChampionsLogo } from '../components/ui/Svg/ChampionsLogo'
 import { ChampionsChart } from '../components/ChampionsChart/ChampionsChart'
 import { useMediaQuery } from '@mantine/hooks'
-import { useAllBalancesQuery } from '../graphql/generated/graphql'
 import { BigNumber, ethers } from 'ethers'
 
 const graphData = [
@@ -294,7 +293,7 @@ const graphData = [
 export default function Home() {
   const theme = useMantineTheme()
   const mounted = useMediaQuery(`(min-width: ${theme.breakpoints.md}px)`, true)
-  const { data, loading } = useAllBalancesQuery()
+  /*const { data, loading } = useAllBalancesQuery()
 
   if (loading) {
     return <Loader />
@@ -308,7 +307,7 @@ export default function Home() {
         BigNumber.from(champ?.balance)
       )).toFixed(4)}`}</td>
     </tr>
-  ))
+  ))*/
 
   return (
     <Container
@@ -489,7 +488,7 @@ export default function Home() {
                   <th>Account Balance</th>
                 </tr>
               </thead>
-              <tbody>{rows}</tbody>
+              {/*<tbody>{rows}</tbody>*/}
             </Table>
           </Grid.Col>
           <Grid.Col xs={12} sm={6}>
