@@ -5,7 +5,6 @@ import {
   useMantineTheme,
   Box,
   Container,
-  Loader,
   Divider,
   UnstyledButton,
   Grid,
@@ -15,7 +14,7 @@ import {
 import { ChampionsLogo } from '../components/ui/Svg/ChampionsLogo'
 import { ChampionsChart } from '../components/ChampionsChart/ChampionsChart'
 import { useMediaQuery } from '@mantine/hooks'
-import { BigNumber, ethers } from 'ethers'
+//import { BigNumber, ethers } from 'ethers'
 
 const graphData = [
   {
